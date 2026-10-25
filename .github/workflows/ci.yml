@@ -32,4 +32,6 @@ jobs:
         run: .\.venv\Scripts\python.exe -m pytest -q --cov=app --cov-report=term-missing --cov-fail-under=70
 
       - name: Run smoke test
+        env:
+          PYTHONIOENCODING: utf-8
         run: .\.venv\Scripts\python.exe scripts/smoke_test.py
