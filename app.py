@@ -269,7 +269,7 @@ def delete_conversation_message(conversation_id: int, message_id: int):
 
     turn_id = message["turn_id"]
     conversation["messages"] = [
-        item for item in conversation["messages"] if item["turn_id"] == turn_id
+        item for item in conversation["messages"] if item["turn_id"] != turn_id
     ]
     save_conversations()
     return "", 204
